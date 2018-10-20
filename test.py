@@ -29,17 +29,19 @@ def total_words():
     word_counter = 0 # variable to keep track of word count
 
     for line in file:
-        words = line.split() # This will split the lines up into each word
+        word_counter += len(line.split())
+        #words = line.split() # This will split the lines up into each word
 
-        for word in words: # this will count the number of words
 
-            word_counter += 1
+        #for word in words: # this will count the number of words
+
+            #word_counter += 1
 
     print("Total number of words:", word_counter)
 
 
 # Defining function to count characters (White spaces not included)
-def total_characters_with_white_space():
+def total_characters_excluding_white_space():
     file = open(file_to_open, "r")
 
     char_counter = 0 # variable to keep track of character count
@@ -55,26 +57,27 @@ def total_characters_with_white_space():
 
                 char_counter += 1
 
-    print("Total number of characters (including whitespace):", char_counter)
+    print("Total number of characters (excluding whitespace):", char_counter)
 
 
 # Defining function to count characters (White spaces included)
-def total_characters_without_white_space():
+def total_characters_including_white_space():
     file = open(file_to_open, "r")
 
     char_counter = 0 # variable to keep track of character count
+    lines = 69
+    for lines, line in file:
+        char_counter += len(line) - 1
 
-    for line in file:
-        char_counter += len(line)-1
-    char_counter+=1
+        #words = line
 
-        # for word in words:
-        #
-        #     for char in word: # this for loop will count the number of characters
-        #
-        #         char_counter += 1
+        #for word in words:
 
-    print("Total number of characters (excluding whitespace):", char_counter)
+            #for char in word: # this for loop will count the number of characters
+
+                #char_counter += 1
+
+    print("Total number of characters (including whitespace):", char_counter)
 
 # this section is where I will call the functions created.
 #main
@@ -82,5 +85,5 @@ def total_characters_without_white_space():
 
 total_lines()
 total_words()
-total_characters_with_white_space()
-total_characters_without_white_space()
+total_characters_excluding_white_space()
+total_characters_including_white_space()
