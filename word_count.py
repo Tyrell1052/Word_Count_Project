@@ -7,12 +7,11 @@ This program will take a txt file and count the total: lines, words, and charact
 
 # This line will ask the user to enter a filename to open
 file_to_open = input("Please Enter the name of the file:")
-# This line will open the requested file in read mode
-#file = open(file_to_open, "r")
 
 
 # Defining functions to count lines
 def total_lines():
+    # This line will open the requested file in read mode for this function
     file = open(file_to_open, "r")
 
     line_counter = 0 # variable to keep track of line count
@@ -24,6 +23,7 @@ def total_lines():
 
 # Defining function to count words
 def total_words():
+    # This line will open the requested file in read mode for this function
     file = open(file_to_open, "r")
 
     word_counter = 0 # variable to keep track of word count
@@ -40,6 +40,7 @@ def total_words():
 
 # Defining function to count characters (White spaces not included)
 def total_characters_with_white_space():
+    # This line will open the requested file in read mode for this function
     file = open(file_to_open, "r")
 
     char_counter = 0 # variable to keep track of character count
@@ -60,19 +61,14 @@ def total_characters_with_white_space():
 
 # Defining function to count characters (White spaces included)
 def total_characters_without_white_space():
+    # This line will open the requested file in read mode for this function
     file = open(file_to_open, "r")
 
     char_counter = 0 # variable to keep track of character count
 
     for line in file:
         char_counter += len(line)-1
-    char_counter+=1
-
-        # for word in words:
-        #
-        #     for char in word: # this for loop will count the number of characters
-        #
-        #         char_counter += 1
+    char_counter += 1
 
     print("Total number of characters (excluding whitespace):", char_counter)
 
